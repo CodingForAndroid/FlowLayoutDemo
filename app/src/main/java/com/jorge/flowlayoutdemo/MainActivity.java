@@ -64,7 +64,6 @@ public class MainActivity extends Activity {
         mDatas.add("开启免费WIFI");
         mDatas.add("Github");
         mDatas.add("回收站");
-        mDatas.add("Ip.Man.3.2015.BD720P.X264.AAC.Cantonese&amp;Mandarin.CHS.Mp4Ba.torrent");
         mDatas.add("支付宝钱包");
         mDatas.add("360安全卫士");
         mDatas.add("本地磁盘");
@@ -79,7 +78,7 @@ public class MainActivity extends Activity {
         mDatas.add("View自定义");
         mDatas.add("...................");
         mDatas.add("八达岭长城");
-
+        mDatas.add("Ip.Man.3.2015.BD720P.X264.AAC.Cantonese&amp;Mandarin.CHS.Mp4Ba.torrent");
     }
 
     public View createLoadedView() {
@@ -88,8 +87,11 @@ public class MainActivity extends Activity {
         mScrollView.setFillViewport(true);// 设置可以填充父窗体
         // 初始化布局，该布局可以自动分配子View位置，保持每一行都能对齐
         mLayout = new FlowLayout(this);
+        //是否填充
+        mLayout.setFillLine(true);
         mLayout.setBackgroundResource(R.drawable.grid_item_bg_normal);
-        int layoutPadding = dip2px(0);
+        // 子view 之间的间距
+        int layoutPadding = dip2px(10);
         mLayout.setPadding(layoutPadding, layoutPadding, layoutPadding,
                 layoutPadding);
         mLayout.setHorizontalSpacing(layoutPadding);
@@ -98,7 +100,8 @@ public class MainActivity extends Activity {
         int textPaddingV = dip2px(4);
         int textPaddingH = dip2px(7);
         int backColor = 0xffcecece;
-        int radius = dip2px(0);
+        // 设置弧度
+        int radius = dip2px(5);
         // 代码动态创建一个图片
         GradientDrawable pressDrawable = createDrawable(
                 backColor, backColor, radius);
